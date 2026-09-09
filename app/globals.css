@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+
+  /* KBBQ Brand - Matches your new white navbar/footer */
+  --primary: #111111; /* Black */
+  --primary-foreground: #ffffff;
+  --accent: #c77900; /* Quarry Orange / Yellow */
+  --accent-light: #ffd000;
+  --muted: #f7f7f7;
+  --border: #f0f0f0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui;
+  --font-mono: var(--font-geist-mono), ui-monospace;
+}
+
+/* Force light theme - Quarry site should stay white like navbar */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #111111;
+    --primary: #111111;
+    --accent: #c77900;
+    --muted: #f7f7f7;
+    --border: #f0f0f0;
+  }
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background: #c77900;
+  color: #000;
+}
